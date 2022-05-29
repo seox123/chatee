@@ -1,9 +1,16 @@
+<p align = "center">
+  <img 
+    width = "300"
+    height = "300"
+    src="https://github.com/Seox123/chatee/blob/main/assets/chatee-logo.png"
+  >
+</p>
 
 ## Team name: Chatee
 
 Developers : Chen Shun & Law Sean Meng
 
-Orbital level of achievement: Apollo
+Proposed Orbital level of achievement: Apollo
 
 ## Motivation
 
@@ -30,7 +37,9 @@ We hope to make a more engaging messaging platform to socialise with your friend
 
 Our core features include: 
   1. Tagging system - to catergorise conversation for easy lookup
-
+  2. Event sheduling function - to allow users to track important dates in relevant group chats
+  3. A gamified point system - to incentivise users to spend time bonding in group chats.
+  4. A personalised private space for each group chat - to create an engaging chatting environment. Users can use points to purchase virtual items to decorate their common space.
 
 ## Techstack
 
@@ -38,11 +47,22 @@ Frontend User Interface (Client side):
  - React Native
 
 Backend (Server side)
- - Sendbird
+ - GetStream
  - Firebase
 
-## System Design diagrams showing how all the different components of your software work together
+## Components
+
+
+## System Design diagrams (showing how all the different components of your software work together)
 
 ## Flow chart showing how some important features will be used by users
 
+## List of components/features to implement
+
+| Admin   | Chat | Point System | Others | Additional |
+| ---------- | ---------- |
+|
+|
 ## Mockups of the screens (expore figma)
+
+## Future 
