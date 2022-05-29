@@ -59,10 +59,11 @@ Backend (Server side)
 
 ## List of components/features to implement
 
-| Admin   | Chat | Point System | Others | Additional |
-| ---------- | ---------- |
-|
-|
+| Admin               | Chat       | Point System | Others     | Additional |
+| ------------------- | ---------- | ------------ | ---------- | ---------- |
+| Login/ Sign up page |
+| Home Page           |
+
 ## Mockups of the screens (expore figma)
 
 ## Future 
