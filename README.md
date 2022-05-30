@@ -33,11 +33,30 @@ We hope to make a more engaging messaging platform to socialise with your friend
 
 3.	I want a novel and refreshing messaging environment with which to connect with my friends and loved ones. 
 
+## Project Scope
+
+Chatee is a messaging plaform designated for private life bonding between you and your loved ones. 
+
+We transform your dull chatrooms into customisable rooms where you and your friends can decorate freely, give it your own personal touch and fill it with your group identity. 
+
+Besides the normal chat features, we also include additional features like the event scheduling function and conversation tagging system for the wild conservations you are going to have with your friends!
+
+<p align = "center">
+  <img 
+    src="https://github.com/Seox123/chatee/blob/main/assets/5064.png"
+  >
+</p>
+
+Here's a short introduction to our app.
+
+[Introduction Video](https://drive.google.com/file/d/141QkJUL__2tLFNIr71e2ypux7t9NaPwc/view?usp=sharing)
+
+
 ## Feature list
 
 Our core features include: 
   1. Tagging system - to catergorise conversation for easy lookup
-  2. Event sheduling function - to allow users to track important dates in relevant group chats
+  2. Event scheduling function - to allow users to track important dates in relevant group chats
   3. A gamified point system - to incentivise users to spend time bonding in group chats.
   4. A personalised private space for each group chat - to create an engaging chatting environment. Users can use points to purchase virtual items to decorate their common space.
 
@@ -46,9 +65,10 @@ Our core features include:
 Frontend User Interface (Client side):
  - React Native
 
-Backend (Server side)
+Backend (Server side):
  - Stream
  - Firebase
+ - Express.js
 
 ## List of components/features to implement
 
@@ -89,4 +109,6 @@ Backend (Server side)
   >
 </p>
 
-## Future 
+## Project Log
+
+Click on this link to view our project log: [Milestone 1 Project Log](https://drive.google.com/file/d/1RHPfE7klnz1GSZGioxdsV4Iz2GHOMuCH/view?usp=sharing)
