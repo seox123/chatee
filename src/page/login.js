@@ -1,38 +1,33 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect, useState, useLayoutEffect } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
 import {
   Image,
+  Keyboard,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  TouchableHighlight,
-  View,
-  Platform,
-  Button,
   TextInput,
-  Keyboard,
   TouchableWithoutFeedback,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-import Icon from "react-native-vector-icons/MaterialIcons";
-
 import { AppContext } from "../../App";
 import { auth } from "../../firebase";
+import PasswordInput from "../components/PasswordInput";
+import SubmitButton from "../components/SubmitButton";
 
 export default function Login({ navigation }) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [hidden, setHidden] = useState(true);
 
   const handleLogin = () => {
-    auth
-      .signInWithEmailAndPassword(email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log(user);
+        // console.log(user);
+        navigation.replace("Home");
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => alert("Invalid Email/Password"));
   };
 
   return (
@@ -45,49 +40,18 @@ export default function Login({ navigation }) {
               <Image source={require("../../assets/chatee-logo.png")} />
               <TextInput
                 style={{ ...styles.input, marginTop: "10%" }}
-                placeholder='Username'
-                onChangeText={setUsername}
+                placeholder='Email'
+                onChangeText={setEmail}
               />
-              <View
-                style={{
-                  ...styles.input,
-                  flexDirection: "row",
-                  alignItems: "center",
-                }}
-              >
-                <TextInput
-                  placeholder='Password'
-                  style={{ width: "100%" }}
-                  maxLength={30}
-                  secureTextEntry={hidden}
-                  keyboardType={hidden ? "default" : "visible-password"}
-                  onChangeText={setPassword}
-                />
-                <TouchableHighlight style={styles.icon} underlayColor={"blue"}>
-                  <Icon
-                    style={{ fontSize: 25 }}
-                    name={hidden ? "visibility-off" : "visibility"}
-                    onPress={() => setHidden(!hidden)}
-                  />
-                </TouchableHighlight>
-              </View>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => console.log(username + "\n" + password)}
-                color='#841584'
-              >
-                <Text style={{ color: "white" }}>Log In</Text>
-              </TouchableOpacity>
+              <PasswordInput onChangeText={setPassword} />
+              <SubmitButton onPress={handleLogin} text='Log In' />
               <Text>OR</Text>
-              <TouchableOpacity
-                style={styles.button}
+              <SubmitButton
                 onPress={() =>
-                  navigation.navigate("Signup", { user: username })
+                  navigation.navigate("Signup", { userEmail: email })
                 }
-                color='#841584'
-              >
-                <Text style={{ color: "white" }}>Sign Up</Text>
-              </TouchableOpacity>
+                text='Sign Up'
+              />
             </View>
           </SafeAreaView>
         </TouchableWithoutFeedback>
@@ -114,18 +78,5 @@ const styles = StyleSheet.create({
     padding: "2%",
     width: "80%",
     margin: "1%",
-  },
-  button: {
-    backgroundColor: "green",
-    height: 40,
-    width: 100,
-    alignItems: "center",
-    borderRadius: 10,
-    padding: 10,
-    margin: 3,
-  },
-  icon: {
-    position: "absolute",
-    right: 8,
   },
 });
