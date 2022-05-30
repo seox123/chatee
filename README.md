@@ -122,6 +122,11 @@ Enter the same email/password to log into the app.
 
 In the home page, press the Sign Out button at the bottom to sign out.
 
+OR
+
+You can try this alternative:
+[link](https://expo.dev/@seox/chatee-milestone-1)
+
 ## Snapshots of the screens
 
 
