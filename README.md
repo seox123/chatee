@@ -76,10 +76,9 @@ Backend (Server side):
 | ------------------- | ---------------------- | ------------------------- | ---------------- | ---------- |
 | Login/ Sign Up Page | Real-time Messaging    | Point Calculation Logic   | Event Scheduling |
 | Home Page           | Group Chat             | Point Dashboard           |                  |
-|                     | Send and Receive Media | Customisable Space Set Up |                  |
+| Profile Page        | Send and Receive Media | Customisable Space Set Up |                  |
 |                     | Search Chat            | Virtual item Shop         |                  |
 |                     | Conversation Tagging   |                           |                  |
-
 
 ## System Design Diagram
 
@@ -89,12 +88,51 @@ Backend (Server side):
   >
 </p>
 
-## Mockups of the screens
+## Program Flow
+
+<p align = "center">
+  <img 
+    src="https://github.com/Seox123/chatee/blob/main/assets/Event%20Flow.png"
+  >
+</p>
+
+## Technical Proof of Concept
+Follow these steps to view our app at the current stage:
+
+1. Download the app from our github repo
+2. Open your command prompt
+3. Navigate to the directory where the app is located
+4. Run npm start
+
+(Running on actual devices)
+
+5. Download the Expo Go app from the App Store/Google Play Store
+6. Scan the QR code shown in your command prompt
+7. If the project is unable to open, go to the developer tools (localhost:*****)
+8. Switch the connection to "Tunnel" and scanning again
+
+(Running on emulators/simulators)
+
+5. Go to the developer tools (localhost:*****)
+6. Click on "Run on Android device/emulator" for Android emulators, or "Run on IOS simulator" for IOS simulators
+
+Once the app is loaded, click on Sign Up to enter an email and password to sign up with.
+
+Enter the same email/password to log into the app.
+
+In the home page, press the Sign Out button at the bottom to sign out.
+
+## Snapshots of the screens
+
 
 <p align = "center">
   <img 
     src="https://github.com/Seox123/chatee/blob/main/assets/Sign%20up.png"
   >
+</p>
+
+<p align = "center">
+Sign Up Page
 </p>
 
 <p align = "center">
@@ -104,10 +142,41 @@ Backend (Server side):
 </p>
 
 <p align = "center">
+Login Page
+</p>
+
+<p align = "center">
   <img 
     src="https://github.com/Seox123/chatee/blob/main/assets/Home.png"
   >
 </p>
+
+<p align = "center">
+Home Page
+</p>
+
+## Plans for Milestone 2 & 3
+<p align = "center">
+Milestone 2 (27 June)
+</p>
+
+| Timeline            | Task                                                                                                    | 
+| ------------------- | ------------------------------------------------------------------------------------------------------- |
+| 31/5 to 10/6        | Implement all the basic chat features : group chat, search chat, send and receive media                 |
+| 11/6 to 17/6        | Work on the point system logic, set up point dashboard, set up virtual item shop and customisable space |
+| 18/6 to 24/6        | Implement the tagging feature and event scheduling function |
+| 25/6 to 27/6        | Touch up and work on Milestone 2 submission        |
+
+<p align = "center">
+Milestone 3 (25 July)
+</p>
+
+| Timeline            | Task                                                                                                    | 
+| ------------------- | ------------------------------------------------------------------------------------------------------- |
+| 28/6 to 1/7         | Touch up on the user interface of the application                                                       |
+| 2/7 to 8/7          | Design more virtual items for the shop                                                                  |
+| 9/7 to 15/7         | User Testing and implement additional features like voice chat, video message etc                       |
+| 16/7 to 25/7        | Touch up and work on Milestone 3 submission                                                             |
 
 ## Project Log
 
