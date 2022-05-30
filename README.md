@@ -47,23 +47,46 @@ Frontend User Interface (Client side):
  - React Native
 
 Backend (Server side)
- - GetStream
+ - Stream
  - Firebase
-
-## Components
-
-
-## System Design diagrams (showing how all the different components of your software work together)
-
-## Flow chart showing how some important features will be used by users
 
 ## List of components/features to implement
 
-| Admin               | Chat       | Point System | Others     | Additional |
-| ------------------- | ---------- | ------------ | ---------- | ---------- |
-| Login/ Sign up page |
-| Home Page           |
+| Admin               | Chat                   | Point System              | Others           | Additional |
+| ------------------- | ---------------------- | ------------------------- | ---------------- | ---------- |
+| Login/ Sign Up Page | Real-time Messaging    | Point Calculation Logic   | Event Scheduling |
+| Home Page           | Group Chat             | Point Dashboard           |                  |
+|                     | Send and Receive Media | Customisable Space Set Up |                  |
+|                     | Search Chat            | Virtual item Shop         |                  |
+|                     | Conversation Tagging   |                           |                  |
 
-## Mockups of the screens (expore figma)
+
+## System Design Diagram
+
+<p align = "center">
+  <img 
+    src="https://github.com/Seox123/chatee/blob/main/assets/System%20Design%20Diagram.png"
+  >
+</p>
+
+## Mockups of the screens
+
+<p align = "center">
+  <img 
+    src="https://github.com/Seox123/chatee/blob/main/assets/Sign%20up.png"
+  >
+</p>
+
+<p align = "center">
+  <img 
+    src="https://github.com/Seox123/chatee/blob/main/assets/Login.png"
+  >
+</p>
+
+<p align = "center">
+  <img 
+    src="https://github.com/Seox123/chatee/blob/main/assets/Home.png"
+  >
+</p>
 
 ## Future 
