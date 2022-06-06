@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Chatee",
-    "slug": "Chatee",
+    "slug": "chatee-milestone-1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }
