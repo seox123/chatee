@@ -11,11 +11,13 @@ import Chatscreen from "./src/page/chatscreen";
 import Room from "./src/page/room";
 import Settings from "./src/page/settings";
 import Eventscreen from "./src/page/event";
+import Channelscreen from "./src/page/channelList";
 
 import { StreamChat } from "stream-chat";
 import { ChannelList, Chat, OverlayProvider } from "stream-chat-expo";
 import { useChatClient } from "./useChatClient";
 import { chatApiKey } from "./chatConfig";
+import Testing from "./src/page/test";
 
 const chatClient = StreamChat.getInstance(chatApiKey);
 
@@ -33,7 +35,7 @@ export default function App() {
   // const onChannelPressed = (channel) => {
   //   console.log(channel);
   // };
-
+  console.log("app restarted");
   return (
     <NavigationContainer>
       <OverlayProvider>
@@ -50,16 +52,17 @@ export default function App() {
                 component={Signup}
                 options={{ headerTransparent: true }}
               /> */}
-              <Stack.Screen name="Home" component={Home} />
-              <Stack.Screen name="Chatscreen" component={Chatscreen} />
-              <Stack.Screen name="Room" component={Room} />
-              <Stack.Screen name="Settings" component={Settings} />
-              <Stack.Screen name="Event" component={Eventscreen} />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Home"
+                component={Home}
+              />
             </Stack.Navigator>
           </AppContext.Provider>
         </Chat>
       </OverlayProvider>
     </NavigationContainer>
+    // <Testing />
   );
 }
 
