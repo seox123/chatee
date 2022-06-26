@@ -25,21 +25,21 @@ export default function Signup({ route, navigation }) {
       <View style={{ ...styles.container }}>
         <TextInput
           style={{ ...styles.input }}
-          placeholder='Username'
+          placeholder="Username"
           onChangeText={setUsername}
         />
         <TextInput
           style={{ ...styles.input }}
-          placeholder='Email'
+          placeholder="Email"
           defaultValue={route.params.userEmail}
           onChangeText={setEmail}
         />
         <PasswordInput onChangeText={setPassword} />
         <PasswordInput
           onChangeText={setPassword}
-          placeholder='Confirm Password'
+          placeholder="Confirm Password"
         />
-        <SubmitButton onPress={handleSignUp} text='Confirm' />
+        <SubmitButton onPress={handleSignUp} text="Confirm" />
       </View>
     </SafeAreaView>
   );

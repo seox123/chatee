@@ -10,7 +10,7 @@
 
 Developers : Chen Shun & Law Sean Meng
 
-Proposed Orbital level of achievement: Apollo
+Proposed Orbital level of achievement: Apollo 11
 
 ## Motivation
 
