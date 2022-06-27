@@ -22,7 +22,7 @@ const Square = ({ row, col }: SquareProps) => {
     <View style={{ flex: 1 }}>
       <Image
         style={{ flex: 1, width: undefined, height: undefined }}
-        source={require("./brick-tiling.png")}
+        source={require("./wood-planks.png")}
       />
     </View>
   );
