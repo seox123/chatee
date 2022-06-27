@@ -37,20 +37,20 @@ export default function Login({ navigation }) {
           {/* <StatusBar backgroundColor='#AFEEEE' barStyle='light-content' /> */}
           <SafeAreaView style={{ ...styles.screen }}>
             <View style={styles.container}>
-              <Image source={require("../../assets/chatee-logo.png")} />
+              <Image source={require("../../assets/readme/chatee-logo.png")} />
               <TextInput
                 style={{ ...styles.input, marginTop: "10%" }}
-                placeholder='Email'
+                placeholder="Email"
                 onChangeText={setEmail}
               />
               <PasswordInput onChangeText={setPassword} />
-              <SubmitButton onPress={handleLogin} text='Log In' />
+              <SubmitButton onPress={handleLogin} text="Log In" />
               <Text>OR</Text>
               <SubmitButton
                 onPress={() =>
                   navigation.navigate("Signup", { userEmail: email })
                 }
-                text='Sign Up'
+                text="Sign Up"
               />
             </View>
           </SafeAreaView>
@@ -62,7 +62,8 @@ export default function Login({ navigation }) {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: "#E0FFFF",
+    // #E0FFFF
+    backgroundColor: "#f0fafa",
     height: "100%",
   },
   container: {

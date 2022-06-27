@@ -10,12 +10,15 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/hooks": "^2.8.1",
     "@react-native-community/netinfo": "8.2.0",
     "@react-native-community/push-notification-ios": "^1.10.1",
     "@react-native-firebase/app": "^14.9.4",
     "@react-native-firebase/messaging": "^14.9.4",
+    "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
+    "@react-navigation/stack": "^6.2.1",
     "expo": "~45.0.0",
     "expo-document-picker": "~10.2.1",
     "expo-file-system": "~14.0.0",
