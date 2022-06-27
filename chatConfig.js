@@ -9,3 +9,8 @@ export const chatUserName = "bryan";
 // export const chatUserToken =
 //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2lhb29zdXV1In0.93fXcPJOendfPWlzPfKS5LMwLG04oqM_Toq3msEKwuk";
 // export const chatUserName = "ciaoosuuu";
+
+// export const chatUserId = "cindy";
+// export const chatUserToken =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2luZHkifQ.opA0BXiOKDQzOvxUpX3BdjxBy1K9EV4SwaXOtTc_tAY";
+// export const chatUserName = "cindy";

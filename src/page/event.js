@@ -4,6 +4,7 @@ import { Agenda } from "react-native-calendars";
 import { useState } from "react";
 import { Card, Avatar } from "react-native-paper";
 import SubmitButton from "../components/SubmitButton";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const timeToString = (time) => {
   const date = new Date(time);
@@ -31,6 +32,12 @@ export default function Eventscreen() {
           // }
         }
       }
+      items["2022-06-22"] = [{ name: "Dr-Strange movie at Nex" }];
+      items["2022-06-23"] = [{ name: "Beach day" }];
+      items["2022-06-25"] = [
+        { name: "Lunch @ The Deck" },
+        { name: "Orbital meeting" },
+      ];
       const newItems = {};
       Object.keys(items).forEach((key) => {
         newItems[key] = items[key];
@@ -52,7 +59,7 @@ export default function Eventscreen() {
               }}
             >
               <Text>{item.name}</Text>
-              <Avatar.Text label="CS" />
+              {/* <Avatar.Text label="Group" /> */}
             </View>
           </Card.Content>
         </Card>
@@ -60,6 +67,7 @@ export default function Eventscreen() {
     );
   };
 
+  items.push;
   return (
     <View style={{ flex: 1 }}>
       <Agenda
@@ -68,13 +76,13 @@ export default function Eventscreen() {
         loadItemsForMonth={loadItems}
         renderItem={renderItem}
         // items={{
-        //   "2022-06-22": [{ name: "item 1 - any js object" }],
-        //   "2022-06-23": [{ name: "item 2 - any js object",  }],
-        //   "2022-06-24": [{ name: "item 1231 - any js object" }],
-        //   "2022-06-25": [
-        //     { name: "item 3 - any js object" },
-        //     { name: "any js object" },
-        //   ],
+        //   "2022-06-22": [{ name: "Dr-Strange movie at Nex" }],
+        //   "2022-06-23": [{ name: "Beach day" }],
+
+        // "2022-06-25": [
+        //   { name: "Lunch @ The Deck" },
+        //   { name: "Orbital meeting" },
+        // ],
         // }}
       />
       {/* <SubmitButton
@@ -86,6 +94,21 @@ export default function Eventscreen() {
           });
         }}
       /> */}
+      <View
+        style={{
+          position: "absolute",
+          transform: [{ translateX: 330 }, { translateY: 550 }],
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => {
+            console.log("clicked");
+          }}
+        >
+          {/* <Image source={require("../components/wood-planks.png")} /> */}
+          <Ionicons name={"add-circle-outline"} size={60} color={"grey"} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

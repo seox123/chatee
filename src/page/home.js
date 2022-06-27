@@ -15,6 +15,8 @@ import Settings from "./settings";
 import Room from "./room";
 import Chatscreen from "./chatscreen";
 import GameRoom from "./gameRoom";
+import Dashboard from "./dashboard";
+import Shop from "./shop";
 
 const ChatStack = createNativeStackNavigator();
 
@@ -23,8 +25,14 @@ function ChatStackScreen() {
     <ChatStack.Navigator>
       <ChatStack.Screen name="Channels" component={Channelscreen} />
       {/* <ChatStack.Screen name="GameRoom" component={GameRoom} /> */}
-      <ChatStack.Screen name="Room" component={Room} />
+      <ChatStack.Screen
+        options={{ headerShown: false }}
+        name="Room"
+        component={Room}
+      />
       <ChatStack.Screen name="Chat" component={Chatscreen} />
+      <ChatStack.Screen name="Dashboard" component={Dashboard} />
+      <ChatStack.Screen name="Shop" component={Shop} />
     </ChatStack.Navigator>
   );
 }
@@ -62,7 +70,7 @@ export default function Home({ navigation }) {
           component={ChatStackScreen}
         />
         <Tab.Screen
-          // options={{ headerShown: false }}
+          options={{ headerShown: false }}
           name="Settings"
           component={Settings}
         />
