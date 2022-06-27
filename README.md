@@ -48,7 +48,7 @@ Besides the normal chat features, we also include additional features like the e
 
 Here's a short introduction to our app.
 
-[Introduction Video](https://drive.google.com/file/d/141QkJUL__2tLFNIr71e2ypux7t9NaPwc/view?usp=sharing)
+[Introduction Video](https://drive.google.com/file/d/1XcYd5QDdlYp2DIDTj-IkeUzC9R8SAIQt/view?usp=sharing)
 
 ## Feature list
 
