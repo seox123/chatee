@@ -12,6 +12,9 @@ Developers : Chen Shun & Law Sean Meng
 
 Proposed Orbital level of achievement: Apollo 11
 
+[Prototype Video](https://drive.google.com/file/d/1XcYd5QDdlYp2DIDTj-IkeUzC9R8SAIQt/view?usp=sharing)
+[Milestone 2 Poster](https://drive.google.com/file/d/1C1TshmDliJY-YNDecHO9yvscz5TzO8nP/view?usp=sharing)
+
 ## Motivation
 
 When you chat about different topics all the time in a large group and you want to refer back to a specific topic that has been buried under other conversation topics, it is often **difficult and time-consuming** to navigate. When you try to search for a topic using current features, you have to try to recall what words were used to navigate back, so why not group conversation chunks under topics that can be easily referred to?
@@ -48,7 +51,7 @@ Besides the normal chat features, we also include additional features like the e
 
 Here's a short introduction to our app.
 
-[Prototype Video](https://drive.google.com/file/d/1XcYd5QDdlYp2DIDTj-IkeUzC9R8SAIQt/view?usp=sharing)
+
 
 ## Feature list
 
