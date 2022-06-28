@@ -13,6 +13,10 @@ Developers : Chen Shun & Law Sean Meng
 Proposed Orbital level of achievement: Apollo 11
 
 [Prototype Video](https://drive.google.com/file/d/1XcYd5QDdlYp2DIDTj-IkeUzC9R8SAIQt/view?usp=sharing)
+<<<<<<< HEAD
+=======
+[Milestone 2 Poster](https://drive.google.com/file/d/1C1TshmDliJY-YNDecHO9yvscz5TzO8nP/view?usp=sharing)
+>>>>>>> cd5aac81efa0068ed993a68ec44b5e55fd7e8e76
 
 ## Motivation
 
@@ -50,6 +54,11 @@ Besides the normal chat features, we also include additional features like the e
 
 Here's a short introduction to our app.
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> cd5aac81efa0068ed993a68ec44b5e55fd7e8e76
 ## Feature list
 
 Our core features include:

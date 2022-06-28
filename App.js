@@ -4,8 +4,8 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-// import Login from "./src/page/login";
-// import Signup from "./src/page/signup";
+import Login from "./src/page/login";
+import Signup from "./src/page/signup";
 import Home from "./src/page/home";
 import Chatscreen from "./src/page/chatscreen";
 import Room from "./src/page/room";
@@ -42,7 +42,7 @@ export default function App() {
         <Chat client={chatClient}>
           <AppContext.Provider value={"hello"}>
             <Stack.Navigator>
-              {/* <Stack.Screen
+              <Stack.Screen
                 name="Login"
                 component={Login}
                 options={{ headerTitle: "", headerTransparent: true }}
@@ -51,7 +51,7 @@ export default function App() {
                 name="Signup"
                 component={Signup}
                 options={{ headerTransparent: true }}
-              /> */}
+              />
               <Stack.Screen
                 options={{ headerShown: false }}
                 name="Home"

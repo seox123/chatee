@@ -4,8 +4,6 @@ import { chatApiKey, chatUserId } from "../../chatConfig";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import SubmitButton from "../components/SubmitButton";
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase";
 import { StreamChat } from "stream-chat";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -16,6 +14,9 @@ import Channelscreen from "./channelList";
 import Settings from "./settings";
 import Room from "./room";
 import Chatscreen from "./chatscreen";
+import GameRoom from "./gameRoom";
+import Dashboard from "./dashboard";
+import Shop from "./shop";
 
 const ChatStack = createNativeStackNavigator();
 
@@ -23,8 +24,15 @@ function ChatStackScreen() {
   return (
     <ChatStack.Navigator>
       <ChatStack.Screen name="Channels" component={Channelscreen} />
-      <ChatStack.Screen name="Room" component={Room} />
+      {/* <ChatStack.Screen name="GameRoom" component={GameRoom} /> */}
+      <ChatStack.Screen
+        options={{ headerShown: false }}
+        name="Room"
+        component={Room}
+      />
       <ChatStack.Screen name="Chat" component={Chatscreen} />
+      <ChatStack.Screen name="Dashboard" component={Dashboard} />
+      <ChatStack.Screen name="Shop" component={Shop} />
     </ChatStack.Navigator>
   );
 }
@@ -48,7 +56,7 @@ export default function Home({ navigation }) {
                 ? "chatbox-ellipses"
                 : "chatbox-ellipses-outline";
             } else if (rn === "Events") {
-              iconName = focused ? "list" : "list-outline";
+              iconName = focused ? "calendar" : "calendar-outline";
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -62,7 +70,7 @@ export default function Home({ navigation }) {
           component={ChatStackScreen}
         />
         <Tab.Screen
-          // options={{ headerShown: false }}
+          options={{ headerShown: false }}
           name="Settings"
           component={Settings}
         />

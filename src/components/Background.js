@@ -14,14 +14,15 @@ interface SquareProps extends RowProps {
 
 const Square = ({ row, col }: SquareProps) => {
   // backgroundColour redundant, just to see whr the grid is.
-  const offset = row % 2 === 0 ? 1 : 0;
-  const backgroundColor = (col + offset) % 2 === 0 ? WHITE : BLACK;
+  // const offset = row % 2 === 0 ? 1 : 0;
+  // const backgroundColor = (col + offset) % 2 === 0 ? WHITE : BLACK;
   return (
     // <ImageBackground source={require("./brick-tiling.png")} />
-    <View style={{ flex: 1, backgroundColor }}>
+    // <View style={{ flex: 1, backgroundColor }}>
+    <View style={{ flex: 1 }}>
       <Image
         style={{ flex: 1, width: undefined, height: undefined }}
-        source={require("./brick-tiling.png")}
+        source={require("./wood-planks.png")}
       />
     </View>
   );
