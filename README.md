@@ -147,7 +147,7 @@ This is the sign up page where users can enter their email and password to regis
 
 <p align = "center">
   <img 
-    src="https://github.com/Seox123/chatee/blob/main/assets/readme/login.png"
+    src="https://github.com/Seox123/chatee/blob/main/assets/readme/Login.png"
   >
 </p>
 
@@ -246,7 +246,7 @@ These tests are currently conducted manually, but we potentially seek to automat
 
 By making use of Git, we have been able to track the changes in our code, when they were made, as well as who made them. Throughout the changes made between Milestone 1 and Milestone 2, Git allows us to keep track of the different version of our code. This allows us to easily revert back or check against previous versions of the code to fix it when bugs arise.
 
-We have also made use of Git pull requests, to ensure that there bugs do not arise as a result of our concurrent modification of code. One party will be able to review modifications from the other party, before deciding which parts of the modified code cna be merged safely.
+We have also made use of Git pull requests, to ensure that there bugs do not arise as a result of our concurrent modification of code. One party will be able to review modifications from the other party, before deciding which parts of the modified code can be merged safely.
 
 <p align = "center">
   <img 
