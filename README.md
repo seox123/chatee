@@ -142,8 +142,9 @@ We implemented the sign up and log in pages, ensuring that new and existing user
 </p>
 
 <p align = "center">
-This is the sign up page where users can enter their email and password to register for their own new account.<br/>
+This is the sign up page where users can enter their email and password to register for their own new account.
 </p>
+<br/>
 
 <p align = "center">
   <img 
@@ -152,8 +153,9 @@ This is the sign up page where users can enter their email and password to regis
 </p>
 
 <p align = "center">
-Users will then use their registered credentials to log into the app from the log in page.<br/>
+Users will then use their registered credentials to log into the app from the log in page.
 </p>
+<br/>
 
 ### Milestone 2
 
@@ -166,8 +168,9 @@ We implemented the profile, a basic game interface, a working chat interface, an
 </p>
 
 <p align="center">
-This is the settings page where users can view and edit their profile. The option to sign out is also located here.<br/>
+This is the settings page where users can view and edit their profile. The option to sign out is also located here.
 </p>
+<br/>
 
 <p align = "center">
   <img 
@@ -176,8 +179,9 @@ This is the settings page where users can view and edit their profile. The optio
 </p>
 
 <p align="center">
-Users are able to see the channels that they are in on this page, and can click on any of them to enter the game interface.<br/>
+Users are able to see the channels that they are in on this page, and can click on any of them to enter the game interface.
 </p>
+<br/>
 
 <p align = "center">
   <img 
@@ -186,8 +190,9 @@ Users are able to see the channels that they are in on this page, and can click 
 </p>
 
 <p align="center">
-This is the game interface, where users are able to navigate to the leaderboard, chat, or shops using the buttons near the bottom.<br/>
+This is the game interface, where users are able to navigate to the leaderboard, chat, or shops using the buttons near the bottom.
 </p>
+<br/>
 
 <p align = "center">
   <img 
@@ -196,8 +201,9 @@ This is the game interface, where users are able to navigate to the leaderboard,
 </p>
 
 <p align="center">
-Users can send messages and attachments using the built in chat interface. They are also able to reply, edit, pin and delete messages.<br/>
+Users can send messages and attachments using the built in chat interface. They are also able to reply, edit, pin and delete messages.
 </p>
+<br/>
 
 <p align = "center">
   <img 
@@ -206,8 +212,9 @@ Users can send messages and attachments using the built in chat interface. They 
 </p>
 
 <p align="center">
-From this events calendar, users can get an overview of dates where they have scheduled events.<br/>
+From this events calendar, users can get an overview of dates where they have scheduled events.
 </p>
+<br/>
 
 <p align = "center">
   <img 
@@ -216,7 +223,7 @@ From this events calendar, users can get an overview of dates where they have sc
 </p>
 
 <p align="center">
-Upon clicking any of the dates, users will be able to get a closer look at the event descriptions of the events that they have scheduled for the respective dates.<br/>
+Upon clicking any of the dates, users will be able to get a closer look at the event descriptions of the events that they have scheduled for the respective dates.
 </p>
 
 ## Limitations
