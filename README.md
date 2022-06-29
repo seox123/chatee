@@ -276,4 +276,4 @@ We have also made use of Git pull requests, to ensure that there bugs do not ari
 
 ## Project Log
 
-Click on this link to view our project log: [Milestone 2 Project Log](https://drive.google.com/file/d/1RHPfE7klnz1GSZGioxdsV4Iz2GHOMuCH/view?usp=sharing)
+Click on this link to view our project log: [Milestone 2 Project Log](https://drive.google.com/file/d/1rlQSEv5_j7SpD5ieszbhzP9LVnRboP9g/view?usp=sharing)
