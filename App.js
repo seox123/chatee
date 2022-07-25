@@ -26,15 +26,12 @@ export const AppContext = React.createContext();
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const { clientIsReady } = useChatClient();
+  // const { clientIsReady } = useChatClient();
 
-  if (!clientIsReady) {
-    return <Text>Loading chat ...</Text>;
-  }
+  // if (!clientIsReady) {
+  //   return <Text>Loading chat ...</Text>;
+  // }
 
-  // const onChannelPressed = (channel) => {
-  //   console.log(channel);
-  // };
   console.log("app restarted");
   return (
     <NavigationContainer>
@@ -62,23 +59,5 @@ export default function App() {
         </Chat>
       </OverlayProvider>
     </NavigationContainer>
-    // <Testing />
   );
 }
-
-// const defaultHeaderOptions = {
-//   headerStyle: {
-//     height: 1,
-//     backgroundColor: "#fff",
-//   },
-//   headerTintColor: "#fff",
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#2",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
