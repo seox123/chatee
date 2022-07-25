@@ -74,7 +74,10 @@ export default function Settings() {
           marginHorizontal: 60,
         }}
       >
-        <Text style={{ fontSize: 26, fontWeight: "bold" }}>{chatUserId}</Text>
+        {/* <Text style={{ fontSize: 26, fontWeight: "bold" }}>{chatUserId}</Text> */}
+        <Text style={{ fontSize: 26, fontWeight: "bold" }}>
+          {auth.currentUser.displayName}
+        </Text>
       </View>
 
       {/* <SubmitButton text="Sign Out" onPress={handleLogout} /> */}
