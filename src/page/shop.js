@@ -38,6 +38,7 @@ export default function Shop({ navigation: { setParams }, route }) {
   const [currItem, setCurrItem] = useState({});
   const [row, setRow] = useState(0);
   const [col, setCol] = useState(0);
+  const [points, setPoints] = useState(20);
 
   const renderItem = ({ item }) => {
     return (
@@ -60,8 +61,12 @@ export default function Shop({ navigation: { setParams }, route }) {
         <Text>{item.price + "¢"}</Text>
         <SubmitButton
           onPress={() => {
-            setModalVisible(true);
-            setCurrItem(item);
+            if (points - item.price >= 0) {
+              setModalVisible(true);
+              setCurrItem(item);
+            } else {
+              alert("Not enough points!");
+            }
           }}
           text='Buy'
         />
@@ -107,6 +112,7 @@ export default function Shop({ navigation: { setParams }, route }) {
           <SubmitButton
             onPress={() => {
               // Minus points
+              setPoints(points - currItem.price);
               // Remove item from shop data list
               const boughtItem = data.splice(data.indexOf(currItem), 1);
               boughtItem[0].row = row;
@@ -128,6 +134,30 @@ export default function Shop({ navigation: { setParams }, route }) {
           />
         </View>
       </Modal>
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          alignSelf: "flex-end",
+          backgroundColor: "#ffdf00",
+          width: 40,
+          height: 40,
+          padding: 4,
+          marginTop: 10,
+          marginRight: 20,
+          borderRadius: 200,
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 15,
+            fontWeight: "bold",
+            color: "#440f01",
+          }}
+        >
+          {points + "¢"}
+        </Text>
+      </View>
       <FlatList
         numColumns={2}
         data={data}

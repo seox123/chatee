@@ -19,7 +19,10 @@ import { chatUserId } from "../../chatConfig";
 import { StretchInX } from "react-native-reanimated";
 
 export default function Settings() {
-  const [tempNickname, setTempNickname] = useState(chatUserId);
+  const [tempNickname, setTempNickname] = useState(
+    // auth.currentUser.displayName
+    chatUserId
+  );
   const [nickname, setNickname] = useState(chatUserId);
   const [modalVisible, setModalVisible] = useState(false);
 

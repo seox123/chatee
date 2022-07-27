@@ -1,7 +1,7 @@
 // chatConfig.js
 // export const chatApiKey = "k78q4299muza";
 import { StreamChat } from "stream-chat";
-import functions from "@react-native-firebase/functions";
+// import functions from "@react-native-firebase/functions";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
 

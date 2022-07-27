@@ -32,16 +32,16 @@ const ChatStack = createNativeStackNavigator();
 function ChatStackScreen() {
   return (
     <ChatStack.Navigator>
-      <ChatStack.Screen name="Channels" component={Channelscreen} />
+      <ChatStack.Screen name='Channels' component={Channelscreen} />
       {/* <ChatStack.Screen name="GameRoom" component={GameRoom} /> */}
       <ChatStack.Screen
         options={{ headerShown: false }}
-        name="Room"
+        name='Room'
         component={Room}
       />
-      <ChatStack.Screen name="Chat" component={Chatscreen} />
-      <ChatStack.Screen name="Dashboard" component={Dashboard} />
-      <ChatStack.Screen name="Shop" component={Shop} />
+      <ChatStack.Screen name='Chat' component={Chatscreen} />
+      <ChatStack.Screen name='Dashboard' component={Dashboard} />
+      <ChatStack.Screen name='Shop' component={Shop} />
     </ChatStack.Navigator>
   );
 }
@@ -66,9 +66,9 @@ export default function Home({ navigation }) {
   const user = {
     id: chatUserId,
   };
-  console.log(
-    "id: " + auth.currentUser.uid + "name: " + auth.currentUser.displayName
-  );
+  // console.log(
+  //   "id: " + auth.currentUser.uid + "name: " + auth.currentUser.displayName
+  // );
   // const test = createChatToken();
 
   // const chatUserToken = chatClient.createToken(auth.currentUser.uid);
@@ -116,15 +116,15 @@ export default function Home({ navigation }) {
           },
         })}
       >
-        <Tab.Screen name="Events" component={Eventscreen} />
+        <Tab.Screen name='Events' component={Eventscreen} />
         <Tab.Screen
           options={{ headerShown: false }}
-          name="Chats"
+          name='Chats'
           component={ChatStackScreen}
         />
         <Tab.Screen
           options={{ headerShown: false }}
-          name="Settings"
+          name='Settings'
           component={Settings}
         />
       </Tab.Navigator>

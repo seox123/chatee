@@ -78,7 +78,6 @@ export default function Eventscreen() {
   const [name, setName] = useState("");
   const [date, setDate] = useState(new Date());
   const addEntry = () => {
-    console.log(date);
     function convert(n) {
       n = String(n);
       if (n.length == 1) {
@@ -89,10 +88,9 @@ export default function Eventscreen() {
     const dateStr =
       date.getFullYear() +
       "-" +
-      convert(date.getMonth()) +
+      convert(date.getMonth() + 1) +
       "-" +
       convert(date.getDate());
-    console.log(dateStr);
     if (items[dateStr] == undefined) {
       items[dateStr] = [];
     }
@@ -116,17 +114,27 @@ export default function Eventscreen() {
             placeholder='Task Name'
             onChangeText={setName}
           />
-          <DateTimePicker
-            value={date}
-            mode='date'
-            display='default'
-            onChange={(event, date) => {
-              //...some code here
-              setDate(date);
-              console.log(date);
+          <View
+            style={{
+              margin: 10,
+              borderRadius: 20,
+              backgroundColor: "black",
             }}
-            style={{ width: 115, backgroundColor: "white" }}
-          />
+          >
+            <DateTimePicker
+              value={date}
+              mode='date'
+              display='spinner'
+              onChange={(event, date) => {
+                //...some code here
+                setDate(date);
+              }}
+              style={{
+                height: 180,
+                width: 300,
+              }}
+            />
+          </View>
           <SubmitButton
             onPress={() => {
               // Minus points

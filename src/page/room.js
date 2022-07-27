@@ -19,12 +19,23 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import GamepadButton from "../components/GamepadButton";
 import Background, { NUM_TILES } from "../components/Background";
 
+const WIDTH = Dimensions.get("window").width;
+const HEIGHT = Dimensions.get("window").height;
+const SIZE = WIDTH / NUM_TILES;
+const animationTiming = 200;
+const GUY_MOVE = WIDTH / NUM_TILES;
+let x = 0;
+let y = WIDTH - GUY_MOVE;
+
 export default function Room(props) {
   const { route } = props;
   const {
     params: { channel },
   } = route;
 
+  const [avatarType, setAvatarType] = useState(
+    require("../../assets/sprites/characters/guy/guy1.png")
+  );
   const [boughtItems, setBoughtItems] = useState([]);
 
   const navigation = useNavigation();
@@ -35,26 +46,14 @@ export default function Room(props) {
   //   return () => navigation.getParent()?.setOptions({ tabBarStyle: undefined });
   // }, [navigation]);
 
-  const WIDTH = Dimensions.get("window").width;
-  const HEIGHT = Dimensions.get("window").height;
-  const SIZE = WIDTH / NUM_TILES;
-  const animationTiming = 200;
-
-  const GUY_MOVE = WIDTH / NUM_TILES;
-
-  let x = 0;
-  let y = WIDTH - GUY_MOVE;
-  useEffect(() => {
-    x = 0;
-    y = WIDTH - GUY_MOVE;
-  }, []);
-
   const transX = useRef(new Animated.Value(x)).current;
   const transY = useRef(new Animated.Value(y)).current;
   const moveLeft = () => {
     if (x > 0) {
       x -= GUY_MOVE;
-      console.log("left");
+      setAvatarType(
+        require("../../assets/sprites/characters/guy/guy-left.png")
+      );
       Animated.timing(transX, {
         duration: animationTiming,
         toValue: x,
@@ -65,7 +64,7 @@ export default function Room(props) {
   const moveRight = () => {
     if (x < WIDTH - GUY_MOVE) {
       x += GUY_MOVE;
-      console.log("right");
+      setAvatarType(require("../../assets/sprites/characters/guy/guy1.png"));
       Animated.timing(transX, {
         duration: animationTiming,
         toValue: x,
@@ -76,7 +75,9 @@ export default function Room(props) {
   const moveUp = () => {
     if (y > 0) {
       y -= GUY_MOVE;
-      console.log("up");
+      setAvatarType(
+        require("../../assets/sprites/characters/guy/guy-back.png")
+      );
       Animated.timing(transY, {
         duration: animationTiming,
         toValue: y,
@@ -87,7 +88,9 @@ export default function Room(props) {
   const moveDown = () => {
     if (y < WIDTH - GUY_MOVE) {
       y += GUY_MOVE;
-      console.log("down");
+      setAvatarType(
+        require("../../assets/sprites/characters/guy/guy-forward.png")
+      );
       Animated.timing(transY, {
         duration: animationTiming,
         toValue: y,
@@ -110,7 +113,9 @@ export default function Room(props) {
       }}
     >
       <ImageBackground
-        source={{ uri: "https://wallpaperaccess.com/full/1660549.jpg" }}
+        source={{
+          uri: "https://cdn.pixabay.com/photo/2017/10/30/12/19/sunset-2902357_960_720.jpg",
+        }}
         resizeMode='cover'
         style={{
           flex: 1,
@@ -160,7 +165,7 @@ export default function Room(props) {
             }}
           >
             <Image
-              source={require("./guy1.png")}
+              source={avatarType}
               resizeMode='contain'
               style={{
                 height: GUY_MOVE,
