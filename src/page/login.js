@@ -24,7 +24,6 @@ export default function Login({ navigation }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        // console.log(user);
         navigation.replace("Home");
       })
       .catch((error) => alert("Invalid Email/Password"));
@@ -34,7 +33,6 @@ export default function Login({ navigation }) {
     <AppContext.Consumer>
       {({ sendBird }) => (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          {/* <StatusBar backgroundColor='#AFEEEE' barStyle='light-content' /> */}
           <SafeAreaView style={{ ...styles.screen }}>
             <View style={styles.container}>
               <Image source={require("../../assets/readme/chatee-logo.png")} />
@@ -62,7 +60,6 @@ export default function Login({ navigation }) {
 
 const styles = StyleSheet.create({
   screen: {
-    // #E0FFFF
     backgroundColor: "#f0fafa",
     height: "100%",
   },

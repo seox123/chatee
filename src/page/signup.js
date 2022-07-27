@@ -4,7 +4,7 @@ import { useState } from "react";
 import { auth } from "../../firebase";
 import PasswordInput from "../components/PasswordInput";
 import SubmitButton from "../components/SubmitButton";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 export default function Signup({ route, navigation }) {
   const [username, setUsername] = useState("");
@@ -15,6 +15,7 @@ export default function Signup({ route, navigation }) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
+        updateProfile(user, { displayName: username });
         navigation.navigate("Login");
       })
       .catch((error) => alert(error.message));
