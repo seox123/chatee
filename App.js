@@ -17,7 +17,8 @@ import { StreamChat } from "stream-chat";
 import { ChannelList, Chat, OverlayProvider } from "stream-chat-expo";
 import { useChatClient } from "./useChatClient";
 import { chatApiKey } from "./chatConfig";
-import Testing from "./src/page/test";
+import Test from "./src/page/test";
+import GameRoom from "./src/page/gameRoom";
 
 const chatClient = StreamChat.getInstance(chatApiKey);
 
@@ -43,19 +44,19 @@ export default function App() {
           <AppContext.Provider value={"hello"}>
             <Stack.Navigator>
               <Stack.Screen
-                name="Login"
-                component={Login}
+                name='Home'
+                component={Home}
                 options={{ headerTitle: "", headerTransparent: true }}
               />
               <Stack.Screen
-                name="Signup"
+                name='Signup'
                 component={Signup}
                 options={{ headerTransparent: true }}
               />
               <Stack.Screen
                 options={{ headerShown: false }}
-                name="Home"
-                component={Home}
+                name='Test'
+                component={Test}
               />
             </Stack.Navigator>
           </AppContext.Provider>

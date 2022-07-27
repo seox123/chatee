@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text } from "react-native";
-import GameArea from "../components/GameArea";
+import GamepadButton from "../components/GamepadButton";
+import SubmitButton from "../components/SubmitButton";
+import Eventscreen from "./event";
+import GameRoom from "./gameRoom";
+import Room from "./room";
+import Shop from "./shop";
 
-export default function Testing() {
-  return (
-    <View>
-      <GameArea />
-    </View>
-  );
+export default function Test() {
+  return <Shop />;
 }

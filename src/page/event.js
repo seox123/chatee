@@ -1,10 +1,18 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Modal,
+  StyleSheet,
+  TextInput,
+} from "react-native";
 import { Agenda } from "react-native-calendars";
 import { useState } from "react";
 import { Card, Avatar } from "react-native-paper";
 import SubmitButton from "../components/SubmitButton";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import DateTimePicker from "@react-native-community/datetimepicker";
 
 const timeToString = (time) => {
   const date = new Date(time);
@@ -13,6 +21,7 @@ const timeToString = (time) => {
 
 export default function Eventscreen() {
   const [items, setItems] = useState({});
+  const [modalVisible, setModalVisible] = useState(false);
 
   const loadItems = (day) => {
     setTimeout(() => {
@@ -59,7 +68,6 @@ export default function Eventscreen() {
               }}
             >
               <Text>{item.name}</Text>
-              {/* <Avatar.Text label="Group" /> */}
             </View>
           </Card.Content>
         </Card>
@@ -67,9 +75,74 @@ export default function Eventscreen() {
     );
   };
 
+  const [name, setName] = useState("");
+  const [date, setDate] = useState(new Date());
+  const addEntry = () => {
+    console.log(date);
+    function convert(n) {
+      n = String(n);
+      if (n.length == 1) {
+        n = "0" + n;
+      }
+      return n;
+    }
+    const dateStr =
+      date.getFullYear() +
+      "-" +
+      convert(date.getMonth()) +
+      "-" +
+      convert(date.getDate());
+    console.log(dateStr);
+    if (items[dateStr] == undefined) {
+      items[dateStr] = [];
+    }
+    items[dateStr].push({ name: name });
+  };
+
   items.push;
   return (
     <View style={{ flex: 1 }}>
+      <Modal
+        animationType='slide'
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={{ ...styles.container }}>
+          <TextInput
+            style={{ ...styles.input }}
+            placeholder='Task Name'
+            onChangeText={setName}
+          />
+          <DateTimePicker
+            value={date}
+            mode='date'
+            display='default'
+            onChange={(event, date) => {
+              //...some code here
+              setDate(date);
+              console.log(date);
+            }}
+            style={{ width: 115, backgroundColor: "white" }}
+          />
+          <SubmitButton
+            onPress={() => {
+              // Minus points
+              // Place the item
+              // Remove item from shop data list
+              addEntry();
+              setModalVisible(!modalVisible);
+            }}
+            text='Add'
+          />
+          <SubmitButton
+            onPress={() => setModalVisible(!modalVisible)}
+            text='Cancel'
+          />
+        </View>
+      </Modal>
       <Agenda
         selected={new Date()}
         items={items}
@@ -102,7 +175,7 @@ export default function Eventscreen() {
       >
         <TouchableOpacity
           onPress={() => {
-            console.log("clicked");
+            setModalVisible(true);
           }}
         >
           {/* <Image source={require("../components/wood-planks.png")} /> */}
@@ -112,3 +185,26 @@ export default function Eventscreen() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  screen: {
+    backgroundColor: "#E0FFFF",
+    height: "100%",
+  },
+  container: {
+    backgroundColor: "white",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: "10%",
+  },
+  input: {
+    borderColor: "gray",
+    borderStyle: "solid",
+    borderWidth: 2,
+    borderRadius: 10,
+    padding: "2%",
+    width: "80%",
+    margin: "1%",
+  },
+});

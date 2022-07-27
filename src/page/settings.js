@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -6,6 +6,8 @@ import {
   Image,
   StyleSheet,
   TouchableOpacity,
+  Modal,
+  TextInput,
 } from "react-native";
 import { Avatar } from "react-native-paper";
 import SubmitButton from "../components/SubmitButton";
@@ -17,6 +19,10 @@ import { chatUserId } from "../../chatConfig";
 import { StretchInX } from "react-native-reanimated";
 
 export default function Settings() {
+  const [tempNickname, setTempNickname] = useState(chatUserId);
+  const [nickname, setNickname] = useState(chatUserId);
+  const [modalVisible, setModalVisible] = useState(false);
+
   const navigation = useNavigation();
 
   const handleLogout = () => {
@@ -39,6 +45,7 @@ export default function Settings() {
 
   return (
     // <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+
     <View
       style={{
         flex: 1,
@@ -47,6 +54,65 @@ export default function Settings() {
         justifyContent: "center",
       }}
     >
+      <Modal
+        animationType='slide'
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <TextInput
+            style={{
+              borderColor: "gray",
+              borderStyle: "solid",
+              borderWidth: 2,
+              borderRadius: 10,
+              padding: "2%",
+              width: "80%",
+              margin: "1%",
+            }}
+            placeholder='Change nickname'
+            onChangeText={setTempNickname}
+          />
+          <TouchableOpacity
+            style={{
+              backgroundColor: "black",
+              height: 50,
+              width: 100,
+              alignItems: "center",
+              borderRadius: 60,
+              // padding: 20,
+              margin: 3,
+              justifyContent: "center",
+            }}
+            onPress={() => {
+              setModalVisible(false);
+              setNickname(tempNickname);
+            }}
+          >
+            <Text style={{ color: "white" }}>Confirm changes</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: "black",
+              height: 50,
+              width: 100,
+              alignItems: "center",
+              borderRadius: 60,
+              // padding: 20,
+              margin: 3,
+              justifyContent: "center",
+            }}
+            onPress={() => setModalVisible(false)}
+          >
+            <Text style={{ color: "white" }}>Cancel</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
       <View
         style={{
           // flexDirection: "row",
@@ -74,7 +140,7 @@ export default function Settings() {
           marginHorizontal: 60,
         }}
       >
-        <Text style={{ fontSize: 26, fontWeight: "bold" }}>{chatUserId}</Text>
+        <Text style={{ fontSize: 26, fontWeight: "bold" }}>{nickname}</Text>
       </View>
 
       {/* <SubmitButton text="Sign Out" onPress={handleLogout} /> */}
@@ -102,6 +168,7 @@ export default function Settings() {
             margin: 3,
             justifyContent: "center",
           }}
+          onPress={() => setModalVisible(true)}
         >
           <Text style={{ color: "white" }}>Edit Profile</Text>
         </TouchableOpacity>

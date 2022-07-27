@@ -1,8 +1,8 @@
 // chatConfig.js
-export const chatApiKey = "k78q4299muza";
+export const chatApiKey = "tkdnmgfq4yab";
 export const chatUserId = "bryan";
 export const chatUserToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYnJ5YW4ifQ.JBQ_FnCuqUo5h_BjMzdYtwdVDnkHPzMusl_sW6T6XG8";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYnJ5YW4ifQ.kH5OjHsjOyM8KXj2vJc2purLos31i4m48mdss8jt4tI";
 export const chatUserName = "bryan";
 
 // export const chatUserId = "ciaoosuuu";

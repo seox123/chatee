@@ -1,5 +1,5 @@
 import SubmitButton from "../components/SubmitButton";
-import React from "react";
+import { React, useRef, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import GameArea from "../components/GameArea";
 import { useEffect } from "react";
@@ -16,12 +16,16 @@ import {
   Dimensions,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import GamepadButton from "../components/GamepadButton";
+import Background, { NUM_TILES } from "../components/Background";
 
 export default function Room(props) {
   const { route } = props;
   const {
     params: { channel },
   } = route;
+
+  const [boughtItems, setBoughtItems] = useState([]);
 
   const navigation = useNavigation();
 
@@ -32,7 +36,69 @@ export default function Room(props) {
   // }, [navigation]);
 
   const WIDTH = Dimensions.get("window").width;
-  const SIZE = WIDTH / 8;
+  const HEIGHT = Dimensions.get("window").height;
+  const SIZE = WIDTH / NUM_TILES;
+  const animationTiming = 200;
+
+  const GUY_MOVE = WIDTH / NUM_TILES;
+
+  let x = 0;
+  let y = WIDTH - GUY_MOVE;
+  useEffect(() => {
+    x = 0;
+    y = WIDTH - GUY_MOVE;
+  }, []);
+
+  const transX = useRef(new Animated.Value(x)).current;
+  const transY = useRef(new Animated.Value(y)).current;
+  const moveLeft = () => {
+    if (x > 0) {
+      x -= GUY_MOVE;
+      console.log("left");
+      Animated.timing(transX, {
+        duration: animationTiming,
+        toValue: x,
+        useNativeDriver: true,
+      }).start();
+    }
+  };
+  const moveRight = () => {
+    if (x < WIDTH - GUY_MOVE) {
+      x += GUY_MOVE;
+      console.log("right");
+      Animated.timing(transX, {
+        duration: animationTiming,
+        toValue: x,
+        useNativeDriver: true,
+      }).start();
+    }
+  };
+  const moveUp = () => {
+    if (y > 0) {
+      y -= GUY_MOVE;
+      console.log("up");
+      Animated.timing(transY, {
+        duration: animationTiming,
+        toValue: y,
+        useNativeDriver: true,
+      }).start();
+    }
+  };
+  const moveDown = () => {
+    if (y < WIDTH - GUY_MOVE) {
+      y += GUY_MOVE;
+      console.log("down");
+      Animated.timing(transY, {
+        duration: animationTiming,
+        toValue: y,
+        useNativeDriver: true,
+      }).start();
+    }
+  };
+
+  const bought = (boughtItem) => {
+    setBoughtItems(boughtItems.concat(boughtItem));
+  };
 
   return (
     <View
@@ -45,14 +111,14 @@ export default function Room(props) {
     >
       <ImageBackground
         source={{ uri: "https://wallpaperaccess.com/full/1660549.jpg" }}
-        resizeMode="cover"
+        resizeMode='cover'
         style={{
           flex: 1,
           justifyContent: "center",
           alignContent: "center",
         }}
       >
-        {/* <View
+        <View
           style={{
             flexDirection: "row",
             backgroundColor: "white",
@@ -60,25 +126,50 @@ export default function Room(props) {
             justifyContent: "center",
           }}
         >
-          <Text> {channel.name} </Text>
-        </View> */}
+          {/* <Text>{channel.name}</Text> */}
+        </View>
 
-        <GameArea />
-
-        <Animated.View
-          style={{
-            position: "absolute",
-            width: SIZE,
-            height: SIZE,
-            // backgroundColor: "black",
-            transform: [{ translateY: 129 }],
-          }}
+        <View
+          style={{ WIDTH, height: WIDTH, backgroundColor: "white", top: 100 }}
         >
-          <Image
-            source={require("./guy1.png")}
-            style={{ width: SIZE, height: SIZE }}
-          />
-        </Animated.View>
+          <Background />
+          {boughtItems.map((item) => {
+            console.log("here");
+            return (
+              <Image
+                source={item.path}
+                style={{
+                  position: "absolute",
+                  top: item.row,
+                  left: item.col,
+                  width: WIDTH / NUM_TILES,
+                  height: WIDTH / NUM_TILES,
+                }}
+              />
+            );
+          })}
+          <Animated.View
+            style={{
+              position: "absolute",
+              flex: 1,
+              alignItems: "center",
+              width: SIZE,
+              height: SIZE,
+              // backgroundColor: "black",
+              transform: [{ translateX: transX }, { translateY: transY }],
+            }}
+          >
+            <Image
+              source={require("./guy1.png")}
+              resizeMode='contain'
+              style={{
+                height: GUY_MOVE,
+              }}
+            />
+          </Animated.View>
+        </View>
+
+        <GamepadButton move={[moveDown, moveLeft, moveUp, moveRight]} />
 
         <View
           style={{
@@ -86,6 +177,7 @@ export default function Room(props) {
             // backgroundColor: "green",
             justifyContent: "space-around",
             marginTop: 40,
+            marginBottom: 40,
           }}
         >
           {/* <SubmitButton
@@ -94,7 +186,6 @@ export default function Room(props) {
           navigation.navigate("Chat", { channel });
         }}
       /> */}
-
           <TouchableOpacity
             onPress={() => {
               navigation.navigate("Dashboard");
@@ -115,7 +206,7 @@ export default function Room(props) {
 
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Shop");
+              navigation.navigate("Shop", { bought: bought });
             }}
           >
             {/* <Image source={require("../components/wood-planks.png")} /> */}
