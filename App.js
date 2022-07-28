@@ -41,8 +41,8 @@ export default function App() {
           <AppContext.Provider value={"hello"}>
             <Stack.Navigator>
               <Stack.Screen
-                name='Home'
-                component={Home}
+                name='Login'
+                component={Login}
                 options={{ headerTitle: "", headerTransparent: true }}
               />
               <Stack.Screen
@@ -52,8 +52,8 @@ export default function App() {
               />
               <Stack.Screen
                 options={{ headerShown: false }}
-                name='Test'
-                component={Test}
+                name='Home'
+                component={Home}
               />
             </Stack.Navigator>
           </AppContext.Provider>
